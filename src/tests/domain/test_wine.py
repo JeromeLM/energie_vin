@@ -4,6 +4,11 @@ from src.tests.builders.wine_builder import WineBuilder
 
 
 class TestWine(TestCase):
+
+    """
+    Feature : get average rating
+    """
+
     def test_get_average_rating_with_no_rating_returns_no_average_rating(self):
         wine = WineBuilder().rated([]).build()
         actual = wine.get_average_rating()

@@ -13,6 +13,10 @@ class Wine:
     _ratings: List[int]
     _price: float
 
+    @property
+    def price(self):
+        return self._price
+
     def get_data(self) -> Dict:
         return {
             "name": self._name,
