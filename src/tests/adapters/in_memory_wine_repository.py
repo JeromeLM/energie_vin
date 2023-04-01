@@ -13,3 +13,8 @@ class InMemoryWineRepository(IWineRepository):
 
     def list(self) -> List[Wine]:
         return self.wines.copy()
+
+    def list_by_best_average_rating(self) -> List[Wine]:
+        return sorted(
+            self.list(), key=lambda wine: wine.get_average_rating(), reverse=True
+        )

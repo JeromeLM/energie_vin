@@ -1,5 +1,6 @@
+import statistics
 from dataclasses import dataclass
-from typing import List, Dict
+from typing import List, Dict, Union
 
 
 @dataclass
@@ -34,3 +35,18 @@ class Wine:
             _ratings=data["ratings"],
             _price=data["price"],
         )
+
+    def get_average_rating(self) -> Union[float, None]:
+        try:
+            # Let's suppose we always want to round to the nearest integer
+            return self._get_nearest_integer(statistics.mean(self._ratings))
+        except statistics.StatisticsError:
+            return None
+
+    # TODO jlm: should be in a dedicated MathService
+    def _get_nearest_integer(cls, number) -> int:
+        # Can't use round() as it's rounding half to even
+        # (2.5 => 2, 3.5 => 4, 4.5 => 4 for example)
+        # whereas we want x.5 to always be rounded to the higher nearest integer
+        # (2.5 => 3, 3.5 => 4, 4.5 => 5 for example)
+        return int(number + 0.5)
