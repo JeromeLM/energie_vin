@@ -25,6 +25,7 @@ class Wine:
             "appellation": self._appellation,
             "vintage": self._vintage,
             "ratings": self._ratings.copy(),
+            "average_rating": self.get_average_rating(),
             "price": self._price,
         }
 

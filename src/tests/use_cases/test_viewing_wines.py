@@ -80,6 +80,7 @@ class TestViewingWinesUseCase(TestCase):
                     "appellation": "Bordeaux",
                     "vintage": 2019,
                     "ratings": [90, 92],
+                    "average_rating": 91,
                     "price": 10.90,
                 },
                 {
@@ -89,6 +90,7 @@ class TestViewingWinesUseCase(TestCase):
                     "appellation": "Navarre",
                     "vintage": 2020,
                     "ratings": [92, 94, 91, 92],
+                    "average_rating": 92,
                     "price": 6.90,
                 },
                 {
@@ -98,6 +100,7 @@ class TestViewingWinesUseCase(TestCase):
                     "appellation": "Payd'Oc",
                     "vintage": 2021,
                     "ratings": [90],
+                    "average_rating": 90,
                     "price": 6.10,
                 },
                 {
@@ -107,6 +110,7 @@ class TestViewingWinesUseCase(TestCase):
                     "appellation": "Jurançon",
                     "vintage": 2018,
                     "ratings": [91, 90, 92],
+                    "average_rating": 91,
                     "price": 9.90,
                 },
                 {
@@ -116,6 +120,7 @@ class TestViewingWinesUseCase(TestCase):
                     "appellation": "Côtes de Provence",
                     "vintage": 2021,
                     "ratings": [92, 94],
+                    "average_rating": 93,
                     "price": 13.90,
                 },
             ]
@@ -133,6 +138,7 @@ class TestViewingWinesUseCase(TestCase):
                     "appellation": "Côtes de Provence",
                     "vintage": 2021,
                     "ratings": [92, 94],
+                    "average_rating": 93,
                     "price": 13.90,
                 },
                 {
@@ -142,6 +148,7 @@ class TestViewingWinesUseCase(TestCase):
                     "appellation": "Navarre",
                     "vintage": 2020,
                     "ratings": [92, 94, 91, 92],
+                    "average_rating": 92,
                     "price": 6.90,
                 },
                 {
@@ -151,6 +158,7 @@ class TestViewingWinesUseCase(TestCase):
                     "appellation": "Bordeaux",
                     "vintage": 2019,
                     "ratings": [90, 92],
+                    "average_rating": 91,
                     "price": 10.90,
                 },
                 {
@@ -160,6 +168,7 @@ class TestViewingWinesUseCase(TestCase):
                     "appellation": "Jurançon",
                     "vintage": 2018,
                     "ratings": [91, 90, 92],
+                    "average_rating": 91,
                     "price": 9.90,
                 },
                 {
@@ -169,6 +178,7 @@ class TestViewingWinesUseCase(TestCase):
                     "appellation": "Payd'Oc",
                     "vintage": 2021,
                     "ratings": [90],
+                    "average_rating": 90,
                     "price": 6.10,
                 },
             ]
@@ -188,6 +198,7 @@ class TestViewingWinesUseCase(TestCase):
                     "appellation": "Bordeaux",
                     "vintage": 2019,
                     "ratings": [90, 92],
+                    "average_rating": 91,
                     "price": 10.90,
                 },
                 {
@@ -197,6 +208,7 @@ class TestViewingWinesUseCase(TestCase):
                     "appellation": "Navarre",
                     "vintage": 2020,
                     "ratings": [92, 94, 91, 92],
+                    "average_rating": 92,
                     "price": 6.90,
                 },
                 {
@@ -206,6 +218,7 @@ class TestViewingWinesUseCase(TestCase):
                     "appellation": "Jurançon",
                     "vintage": 2018,
                     "ratings": [91, 90, 92],
+                    "average_rating": 91,
                     "price": 9.90,
                 },
             ]
@@ -227,6 +240,7 @@ class TestViewingWinesUseCase(TestCase):
                     "appellation": "Navarre",
                     "vintage": 2020,
                     "ratings": [92, 94, 91, 92],
+                    "average_rating": 92,
                     "price": 6.90,
                 },
                 {
@@ -236,6 +250,7 @@ class TestViewingWinesUseCase(TestCase):
                     "appellation": "Bordeaux",
                     "vintage": 2019,
                     "ratings": [90, 92],
+                    "average_rating": 91,
                     "price": 10.90,
                 },
                 {
@@ -245,6 +260,7 @@ class TestViewingWinesUseCase(TestCase):
                     "appellation": "Jurançon",
                     "vintage": 2018,
                     "ratings": [91, 90, 92],
+                    "average_rating": 91,
                     "price": 9.90,
                 },
             ]
