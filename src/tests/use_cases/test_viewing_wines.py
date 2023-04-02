@@ -208,6 +208,45 @@ class TestViewingWinesUseCase(TestCase):
             ]
         )
 
+    def test_user_can_view_wines_whose_price_is_included_in_a_given_price_range_and_sorted_by_best_average_rating(  # noqa
+        self,
+    ):
+        self.given_following_wines_exist(self.existing_wines)
+        self.when_user_wants_to_view_all_the_wines_with_a_price_included_in_this_price_range_and_sorted_by_best_average_rating(  # noqa
+            price_range=PriceRange(min=6.90, max=10.90)
+        )
+        self.then_displayed_wines_should_be(
+            [
+                {
+                    "name": "Viña Zorzal Garnacha 2020",
+                    "type": "rouge",
+                    "winery": "Viña Zorzal",
+                    "appellation": "Navarre",
+                    "vintage": 2020,
+                    "ratings": [92, 94, 91, 92],
+                    "price": 6.90,
+                },
+                {
+                    "name": "Château Marjosse 2019",
+                    "type": "rouge",
+                    "winery": "Château Marjosse",
+                    "appellation": "Bordeaux",
+                    "vintage": 2019,
+                    "ratings": [90, 92],
+                    "price": 10.90,
+                },
+                {
+                    "name": "Clos Uroulat la Petite Hours 2018",
+                    "type": "blanc",
+                    "winery": "Domaine Uroulat",
+                    "appellation": "Jurançon",
+                    "vintage": 2018,
+                    "ratings": [91, 90, 92],
+                    "price": 9.90,
+                },
+            ]
+        )
+
     def given_following_wines_exist(self, wines: List[Wine]):
         for wine in wines:
             self.wine_repository.save(wine)
@@ -228,3 +267,11 @@ class TestViewingWinesUseCase(TestCase):
     ):
         view_wines_use_case = ViewWinesUseCase(wine_repository=self.wine_repository)
         self.wines = view_wines_use_case.handle(price_range=price_range)
+
+    def when_user_wants_to_view_all_the_wines_with_a_price_included_in_this_price_range_and_sorted_by_best_average_rating(  # noqa
+        self, price_range: PriceRange
+    ):
+        view_wines_use_case = ViewWinesUseCase(wine_repository=self.wine_repository)
+        self.wines = view_wines_use_case.handle(
+            price_range=price_range, sort_by_best_average_rating=True
+        )
