@@ -1,5 +1,5 @@
 import statistics
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List, Dict, Union
 
 
@@ -11,11 +11,19 @@ class Wine:
     _appellation: str
     _vintage: int
     _ratings: List[int]
+    _average_rating: int = field(init=False)
     _price: float
+
+    @property
+    def average_rating(self):
+        return self._average_rating
 
     @property
     def price(self):
         return self._price
+
+    def __post_init__(self):
+        self._average_rating = self._get_average_rating()
 
     def get_data(self) -> Dict:
         return {
@@ -25,7 +33,7 @@ class Wine:
             "appellation": self._appellation,
             "vintage": self._vintage,
             "ratings": self._ratings.copy(),
-            "average_rating": self.get_average_rating(),
+            "average_rating": self._average_rating,
             "price": self._price,
         }
 
@@ -41,7 +49,7 @@ class Wine:
             _price=data["price"],
         )
 
-    def get_average_rating(self) -> Union[float, None]:
+    def _get_average_rating(self) -> Union[int, None]:
         try:
             # Let's suppose we always want to round to the nearest integer
             return self._get_nearest_integer(statistics.mean(self._ratings))
@@ -55,3 +63,15 @@ class Wine:
         # whereas we want x.5 to always be rounded to the higher nearest integer
         # (2.5 => 3, 3.5 => 4, 4.5 => 5 for example)
         return int(number + 0.5)
+
+    def __repr__(self):
+        data = {
+            "name": f"{self._name}",
+            "type": f"{self._type}",
+            "winery": f"{self._winery}",
+            "appellation": f"{self._appellation}",
+            "vintage": self._vintage,
+            "ratings": self._ratings.copy(),
+            "price": self._price,
+        }
+        return f"Wine.create_from_data({data})"

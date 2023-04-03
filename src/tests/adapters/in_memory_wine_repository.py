@@ -35,4 +35,4 @@ class InMemoryWineRepository(IWineRepository):
         return [wine for wine in wines if price_range.is_price_within(wine.price)]
 
     def _sort_by_best_average_rating(self, wines: List[Wine]) -> List[Wine]:
-        return sorted(wines, key=lambda wine: wine.get_average_rating(), reverse=True)
+        return sorted(wines, key=lambda wine: wine.average_rating, reverse=True)
