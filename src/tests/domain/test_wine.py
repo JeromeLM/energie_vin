@@ -11,24 +11,24 @@ class TestWine(TestCase):
 
     def test_get_average_rating_with_no_rating_returns_no_average_rating(self):
         wine = WineBuilder().rated([]).build()
-        actual = wine.get_average_rating()
+        actual = wine._get_average_rating()
         assert actual is None
 
     def test_get_average_rating_with_1_rating_returns_this_1_rating(self):
         wine = WineBuilder().rated([90]).build()
-        actual = wine.get_average_rating()
+        actual = wine._get_average_rating()
         assert actual == 90
 
     def test_get_average_rating_with_several_ratings_returns_average_rating(self):
         wine = WineBuilder().rated([90, 91, 92, 93, 89]).build()
-        actual = wine.get_average_rating()
+        actual = wine._get_average_rating()
         assert actual == 91
 
     def test_get_average_rating_with_several_ratings_returns_average_rating_rounded_to_the_higher_integer(  # noqa
         self,
     ):
         wine = WineBuilder().rated([90, 92, 93]).build()
-        actual = wine.get_average_rating()
+        actual = wine._get_average_rating()
         # 91.6666666 => 92
         assert actual == 92
 
@@ -36,7 +36,7 @@ class TestWine(TestCase):
         self,
     ):
         wine = WineBuilder().rated([90, 91, 90]).build()
-        actual = wine.get_average_rating()
+        actual = wine._get_average_rating()
         # 90.333333 => 90
         assert actual == 90
 
@@ -45,6 +45,6 @@ class TestWine(TestCase):
         self,
     ):
         wine = WineBuilder().rated([90, 91]).build()
-        actual = wine.get_average_rating()
+        actual = wine._get_average_rating()
         # 90.5 => 91
         assert actual == 91
