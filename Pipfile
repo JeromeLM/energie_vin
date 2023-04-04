@@ -4,8 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-sqlalchemy = "*"
-psycopg2-binary = "*"
+fastapi = "*"
+uvicorn = "*"
+httpx = "*"
 
 [dev-packages]
 black = "*"

@@ -63,15 +63,3 @@ class Wine:
         # whereas we want x.5 to always be rounded to the higher nearest integer
         # (2.5 => 3, 3.5 => 4, 4.5 => 5 for example)
         return int(number + 0.5)
-
-    def __repr__(self):
-        data = {
-            "name": f"{self._name}",
-            "type": f"{self._type}",
-            "winery": f"{self._winery}",
-            "appellation": f"{self._appellation}",
-            "vintage": self._vintage,
-            "ratings": self._ratings.copy(),
-            "price": self._price,
-        }
-        return f"Wine.create_from_data({data})"

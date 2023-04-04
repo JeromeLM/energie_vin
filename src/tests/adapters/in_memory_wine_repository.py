@@ -36,3 +36,10 @@ class InMemoryWineRepository(IWineRepository):
 
     def _sort_by_best_average_rating(self, wines: List[Wine]) -> List[Wine]:
         return sorted(wines, key=lambda wine: wine.average_rating, reverse=True)
+
+    def given_existing_wines(self, wines: List[Wine]):
+        for wine in wines:
+            self.save(wine)
+
+    def clean_wines(self):
+        self.wines = []
