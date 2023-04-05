@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+pipenv lock -r > requirements.txt
 set -e
 echo "### BLACK"
 black ./

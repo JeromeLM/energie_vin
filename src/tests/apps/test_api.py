@@ -4,7 +4,7 @@ from unittest.mock import patch
 from fastapi.testclient import TestClient
 
 from src.application.use_cases.view_wines_use_case import ViewWinesUseCase
-from src.apps.api import app, get_repository
+from src.main import app, get_repository
 from src.tests.builders.wine_builder import WineBuilder
 from src.tests.fixtures.wine_fixture import WineFixture
 
