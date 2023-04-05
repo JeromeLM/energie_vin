@@ -22,14 +22,14 @@ class SessionFactory:
     @classmethod
     def build(cls, exec_profile: str) -> Session:
         if exec_profile == "local":
-            if not cls.real_session is None:
+            if cls.real_session is not None:
                 return cls.real_session
             db_url = get_postgres_url()
             cls.real_session = cls._build_session(db_url)
             return cls.real_session
 
         if exec_profile == "test":
-            if not cls.test_session is None:
+            if cls.test_session is not None:
                 return cls.test_session
             db_url = get_postgres_test_url()
             cls.test_session = cls._build_session(db_url)

@@ -58,3 +58,9 @@ Otherwise, you can test them by the Swagger API available here :
 ```
 http://0.0.0.0:5005/docs
 ```
+
+## Running tests
+
+```sh
+./test.sh
+```
