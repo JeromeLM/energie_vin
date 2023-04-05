@@ -64,3 +64,8 @@ http://0.0.0.0:5005/docs
 ```sh
 ./test.sh
 ```
+
+## Some words about the implementation
+For now, I've chosen to use the hexagonal architecture pattern (Ports and Adapters). 
+
+And to keep learning new things, I've used for the first time the FastAPI framework and SQLAlchemy, instead of Django.
