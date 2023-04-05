@@ -1,12 +1,12 @@
 from typing import List, Dict
 
-from src.application.use_cases.view_wines_use_case import (
+from application.use_cases.view_wines_use_case import (
     ViewWinesUseCase,
     ViewWinesCommand,
 )
-from src.domain.price_range import PriceRange
-from src.domain.wine import Wine
-from src.tests.adapters.in_memory_wine_repository import InMemoryWineRepository
+from domain.price_range import PriceRange
+from domain.wine import Wine
+from tests.adapters.in_memory_wine_repository import InMemoryWineRepository
 
 
 class WineFixture:

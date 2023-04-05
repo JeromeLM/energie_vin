@@ -1,8 +1,8 @@
 from unittest import TestCase
 
-from src.domain.price_range import PriceRange
-from src.tests.builders.wine_builder import WineBuilder
-from src.tests.fixtures.wine_fixture import WineFixture
+from domain.price_range import PriceRange
+from tests.builders.wine_builder import WineBuilder
+from tests.fixtures.wine_fixture import WineFixture
 
 
 class TestViewingWinesUseCase(TestCase):

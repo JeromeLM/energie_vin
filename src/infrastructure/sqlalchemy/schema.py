@@ -3,7 +3,7 @@ from sqlalchemy.dialects.postgresql import ARRAY
 from sqlalchemy.orm import registry
 
 
-from src.domain.wine import Wine
+from domain.wine import Wine
 
 mapper_registry = registry()
 

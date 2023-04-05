@@ -2,9 +2,9 @@ from unittest import TestCase
 
 from sqlalchemy import text
 
-from src.domain.wine import Wine
-from src.infrastructure.session_factory import SessionFactory
-from src.tests.builders.wine_builder import WineBuilder
+from domain.wine import Wine
+from infrastructure.session_factory import SessionFactory
+from tests.builders.wine_builder import WineBuilder
 
 
 class TestSqlAlchemyOrm(TestCase):

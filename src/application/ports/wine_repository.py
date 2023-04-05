@@ -1,7 +1,7 @@
 import abc
 from typing import List, Dict
 
-from src.domain.wine import Wine
+from domain.wine import Wine
 
 
 class IWineRepository(abc.ABC):

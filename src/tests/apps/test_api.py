@@ -3,10 +3,10 @@ from unittest.mock import patch
 
 from fastapi.testclient import TestClient
 
-from src.application.use_cases.view_wines_use_case import ViewWinesUseCase
-from src.main import app, get_repository
-from src.tests.builders.wine_builder import WineBuilder
-from src.tests.fixtures.wine_fixture import WineFixture
+from application.use_cases.view_wines_use_case import ViewWinesUseCase
+from main import app, get_repository
+from tests.builders.wine_builder import WineBuilder
+from tests.fixtures.wine_fixture import WineFixture
 
 client = TestClient(app)
 wine_fixture = WineFixture()

@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from typing import List
 
-from src.domain.wine import Wine
+from domain.wine import Wine
 
 
 @dataclass

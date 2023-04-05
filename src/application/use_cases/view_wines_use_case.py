@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from typing import List, Dict, Union
 
-from src.application.ports.wine_repository import IWineRepository
-from src.domain.price_range import PriceRange
+from application.ports.wine_repository import IWineRepository
+from domain.price_range import PriceRange
 
 
 @dataclass

@@ -2,12 +2,12 @@ from unittest import TestCase
 
 from sqlalchemy import text
 
-from src.domain.price_range import PriceRange
-from src.infrastructure.adapters.sqlalchemy_wine_repository import (
+from domain.price_range import PriceRange
+from infrastructure.adapters.sqlalchemy_wine_repository import (
     SqlAlchemyWineRepository,
 )
-from src.infrastructure.session_factory import SessionFactory
-from src.tests.builders.wine_builder import WineBuilder
+from infrastructure.session_factory import SessionFactory
+from tests.builders.wine_builder import WineBuilder
 
 
 class TestSqlAlchemyWineRepository(TestCase):

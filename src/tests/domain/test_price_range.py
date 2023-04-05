@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from src.domain.price_range import PriceRange
+from domain.price_range import PriceRange
 
 
 class TestPriceRange(TestCase):

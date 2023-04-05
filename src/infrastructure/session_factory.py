@@ -1,15 +1,20 @@
+from sqlalchemy_utils import database_exists, create_database
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
 
-from src.config import get_postgres_test_url, get_postgres_url
-from src.infrastructure.sqlalchemy.schema import mapper_registry, start_mappers
+from config import get_postgres_test_url, get_postgres_url
+from infrastructure.sqlalchemy.schema import mapper_registry, start_mappers
 
 
-# This class allows to build a session depending on the context (test or real purpose)
-# while reusing a session previously created if any (avoiding test failures if session
-# already active).
-# Mappers must also be started only once.
 class SessionFactory:
+    """
+    This class allows to build a session depending on the context (test or real purpose)
+    while reusing a session previously created if any (avoiding test failures if session
+    already active).
+    Mappers must also be started only once.
+    """
+
     mappers_already_started = False
     real_session = None
     test_session = None
@@ -35,6 +40,8 @@ class SessionFactory:
     @classmethod
     def _build_session(cls, db_url: str) -> Session:
         engine = create_engine(db_url)
+        if not database_exists(engine.url):
+            create_database(engine.url)
         mapper_registry.metadata.create_all(engine)
         if cls.mappers_already_started is False:
             start_mappers()

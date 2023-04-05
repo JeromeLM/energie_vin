@@ -2,16 +2,16 @@ import uvicorn
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy import text
 
-from src.application.ports.wine_repository import IWineRepository
-from src.application.use_cases.view_wines_use_case import (
+from application.ports.wine_repository import IWineRepository
+from application.use_cases.view_wines_use_case import (
     ViewWinesCommand,
     ViewWinesUseCase,
 )
-from src.domain.price_range import PriceRange
-from src.infrastructure.adapters.sqlalchemy_wine_repository import (
+from domain.price_range import PriceRange
+from infrastructure.adapters.sqlalchemy_wine_repository import (
     SqlAlchemyWineRepository,
 )
-from src.infrastructure.session_factory import SessionFactory
+from infrastructure.session_factory import SessionFactory
 
 app = FastAPI()
 

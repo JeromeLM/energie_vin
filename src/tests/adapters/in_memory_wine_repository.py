@@ -1,8 +1,8 @@
 from typing import List, Dict, Union
 
-from src.application.ports.wine_repository import IWineRepository
-from src.domain.price_range import PriceRange
-from src.domain.wine import Wine
+from application.ports.wine_repository import IWineRepository
+from domain.price_range import PriceRange
+from domain.wine import Wine
 
 
 class InMemoryWineRepository(IWineRepository):

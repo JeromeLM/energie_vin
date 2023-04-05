@@ -24,3 +24,37 @@ _Quand vous lui parlez d’un MVP, le porteur de projet aimerait bien pouvoir da
 
 _Vous avez rendez-vous dans quelques jours avec lui. Son souhait, est que vous puissiez mettre en place une première structure du projet avec une prémisse de développement afin que vous et les prochains développeurs, puissiez travailler dans de bonnes conditions._ 
 _Vous vous engagez à fournir un premier livrable récupérable via un repo git et si besoin, tout document utile à la conception. Vous discuterez avec lui de la stratégie future : des prochains développements, de l’infrastructure et des nouveaux recrutements nécessaires à la bonne réalisation de ce projet ambitieux._
+
+## Requirements
+
+* docker with docker-compose
+
+## Building and running the containers
+
+```sh
+./run.sh
+```
+
+## Testing APIs
+
+You can use Postman to test the APIs.
+Examples:
+```
+GET http://0.0.0.0:5005/wines
+```
+lists all the wines currently in the database.
+
+```
+GET http://0.0.0.0:5005/wines?sort=best_average_rating
+```
+lists all the wines currently in the database, sorting by the best average rating.
+
+```
+GET http://0.0.0.0:5005/wines?sort=best_average_rating&min_price=10&max_price=10.90
+```
+lists all the wines currently in the database, sorting by the best average rating and whose price is included in the price range.
+
+Otherwise, you can test them by the Swagger API available here : 
+```
+http://0.0.0.0:5005/docs
+```

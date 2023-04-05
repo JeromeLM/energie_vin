@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from src.tests.builders.wine_builder import WineBuilder
+from tests.builders.wine_builder import WineBuilder
 
 
 class TestWine(TestCase):

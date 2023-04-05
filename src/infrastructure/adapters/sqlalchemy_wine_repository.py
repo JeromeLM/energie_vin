@@ -3,8 +3,8 @@ from typing import Dict, List, Union
 from sqlalchemy import text, desc
 from sqlalchemy.orm import Session, Query
 
-from src.application.ports.wine_repository import IWineRepository
-from src.domain.wine import Wine
+from application.ports.wine_repository import IWineRepository
+from domain.wine import Wine
 
 
 class SqlAlchemyWineRepository(IWineRepository):
