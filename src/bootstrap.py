@@ -3,6 +3,7 @@ import os
 from sqlalchemy import text, create_engine
 from sqlalchemy.orm import sessionmaker
 
+from src.config import get_postgres_url
 from src.infrastructure.sqlalchemy.schema import mapper_registry, start_mappers
 
 # TODO jlm: this file is really really dirty...
@@ -24,7 +25,7 @@ if not os.environ.get("EXEC_PROFILE") == "test":
             },
         )
 
-    db_url = "postgresql://postgres:root@localhost:5435/energie_vin"
+    db_url = get_postgres_url()
     engine = create_engine(db_url)
     mapper_registry.metadata.create_all(engine)
     start_mappers()
